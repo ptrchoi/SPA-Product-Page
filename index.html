@@ -1,0 +1,195 @@
+<!--
+    FreeCodeCamp Responsive Web Design Project: 
+    >PRODUCT LANDING PAGE<
+
+    Examples of:
+        > Responsive, nested flex box and grid layouts
+        > Modals - responsive nav menu overlay and image gallery zoom view
+        > Customized, interactive media and assets
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!-- <link rel=“stylesheet” href=“https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto.min.css”></i> -->
+    <title>FCC Product Landing Page Project | Wood and Steel Exceptional Guitars</title>
+</head>
+<body>
+    <!-- ---------------- IMAGE MODAL ---------------- -->
+    <div id="modal" class="modal--off">
+        <img id="modal-img">
+        <i id="modal-icon-close" class="far fa-window-close" onclick="closeModal()"></i>
+        <i id="modal-icon-prev" class="fas fa-chevron-left" onclick="nextImageHandler(-1)"></i>
+        <i id="modal-icon-next" class="fas fa-chevron-right" onclick="nextImageHandler(1)"></i>
+    </div>
+
+    <div class="flexbox-container">
+        <main>
+            <!-- ---------------- HEADER ---------------- -->
+            <header id="header">
+                <nav id="nav-bar" class="nav-container">
+                    <a id="nav-item1" class="nav-link" onclick="checkOverlay()" href="#home">Home</a>
+                    <a id="nav-item2" class="nav-link" onclick="checkOverlay()" href="#box1">Overview</a>
+                    <a id="nav-item3" class="nav-link" onclick="checkOverlay()" href="#box2">The Details</a>
+                    <a id="nav-item4" class="nav-link" onclick="checkOverlay()" href="#box3">The Story</a>
+                    <div id="logo-wrapper">
+                        <img id="header-img" src="images/logo/ws-sound-logo-2.png" alt="ws logo" onclick="playFX()">
+                        <audio id="harmonic-sfx" src="audio/acoustic-harmonic.wav"></audio>
+                    </div>
+                </nav>
+                <div id="title-wrapper">
+                    <h1 id="title">Wood & Steel</h1>
+                    <h5 id="subtitle">Exceptional Guitars</h2>    
+                </div>    
+                <div id="nav-overlay" class="nav-overlay--off">
+                    <div id="nav-icon" class="nav-icon--burger" onclick="toggleOverlay()">
+                        <div class="nav-icon--bar1"></div>
+                        <div class="nav-icon--bar2"></div>
+                        <div class="nav-icon--bar3"></div>
+                    </div>
+                </div>
+            </header>
+            <!-- ---------------- HOME ---------------- -->
+            <div id="home" class="flex-box">
+                <div class="bg-video-wrapper">
+                    <video autoplay muted loop id="backgroundVideo" >
+                        <source src="video/dome-clip-edited-audio.mp4" type="video/mp4">
+                    </video>
+                    <div>
+                        <img id="volume-icon" src="images/icons/volume-x.svg" onclick="volumeControl()">
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------- SUMMARY ---------------- -->
+            <div id="box1" class="flex-box">
+                <div>
+                    <h2 id="summary-title">The Edmund Blochinger "Dome" Guitar</h2>
+                    <div class="summary-wrapper">
+                        <div>
+                            <img id="story-img1" class="story-img" src="images/reference/church-with-beams.jpg" alt="old church roof" onclick="openModal(this)">
+                            <p>
+                                The backstory of this instrument is absolutely incredible. 
+                                Although Blochinger is known for the quality of his materials, 
+                                this guitar has a very special story, even by his standards. 
+                                In particular, 
+                                <span>the spruce used for the soundboard has been on a dramatic 800 year journey</span> 
+                                from its birthplace in the Bavarian alps to its centuries-long tenure supporting the roof of Munich's most iconic church, 
+                                and eventually into the ruins of World War II's devastated Munich, 
+                                where it was rescued by a violin maker named Franz Fuchs who, 
+                                along with his son Gerald, 
+                                have been the caretakers and preservers of this precious wood for the past 70 years 
+                                until it reached the workshop of Edmund Blochinger and has been re-born in this incredible instrument. 
+                                For a fuller account of the details, click 
+                                <a target="_blank" href="http://www.guitarsalon.com/blog/?p=21079">here</a>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---- DETAILS | IMAGE GALLERY | SPECS TABLE ---- -->
+            <div id="box2" class="flex-box">
+                <h2>The Details</h2>
+                <div id="gallery" class="gallery-container">
+                    <div id="img-slot1" class="gallery-img-wrapper">
+                        <img id="img1" class="gallery-img current-image" src="images/guitar/neckperspective.png"  alt="guitar neck" onclick="openModal(this, 'gallery')">
+                    </div>
+                    <div id="img-slot2" class="gallery-img-wrapper">
+                        <img id="img2" class="gallery-img" src="images/guitar/headstock.png" alt="guitar headstock" onclick="openModal(this, 'gallery')">
+                    </div>
+                    <div id="img-slot3" class="gallery-img-wrapper">
+                        <img id="img3" class="gallery-img" src="images/guitar/lowerback.png" alt="guitar back" onclick="openModal(this, 'gallery')">
+                    </div>
+                    <div id="img-slot4" class="gallery-img-wrapper">
+                        <img id="img4" class="gallery-img" src="images/guitar/soundhole.png" alt="guitar soundhole" onclick="openModal(this, 'gallery')">                    
+                    </div>
+                    <div id="img-slot5" class="gallery-img-wrapper">
+                        <img id="img5" class="gallery-img" src="images/guitar/labeldetail.png" alt="guitar label" onclick="openModal(this, 'gallery')">
+                    </div>
+                </div>            
+                <div id="specs" class="grid-container">
+                    <div class="grid-label">Year: </div>
+                    <div class="grid-field">2017</div>
+                    <div class="grid-label">Top: </div>
+                    <div class="grid-field">Spruce</div>
+                    <div class="grid-label">Back & Sides: </div>
+                    <div class="grid-field">Spruce</div>
+                    <div class="grid-label">Scale Length: </div>
+                    <div class="grid-field">650 mm</div>
+                    <div class="grid-label">Nut Width: </div>
+                    <div class="grid-field">52 mm</div>
+                    <div class="grid-label">Finish: </div>
+                    <div class="grid-field">French Polish</div>
+                    <div class="grid-label">Country of Origin: </div>
+                    <div class="grid-field">Germany</div>
+                    <div class="grid-label">Condition: </div>
+                    <div class="grid-field">New</div>
+                    <div class="grid-label">Custom Case: </div>
+                    <div class="grid-field">Yes</div>
+                </div>
+            </div>
+            <!-- ---------------- STORY | VIDEO ---------------- -->
+            <div id="box3" class="flex-box">
+                <h2>The Story</h2>
+                <div class="story-wrapper">
+                    <div>
+                        <img id="story-img2" class="story-img" src="images/reference/bavarian-alps.png" alt="bavarian alps" onclick="openModal(this)">
+                        <p>
+                            Analysis of the annular rings of this spruce dates the origin of the trees from this to about the year 1190. The trees were cut in the <span>Bavarian alps around the year 1460</span> and floated down the river Isar to Munich where they were pulled out of the water and used in the construction of the roof of this church which was completed in 1492. In other words, this wood is over 800 years old from the dating of its earliest rings.
+                        </p>
+                    </div>
+                    <div>
+                        <i id="expand-icon" class="fas fa-angle-double-down" onclick="expandDiv(true)"></i>
+                    </div>
+                    <div id="story2" class="collapsed-div">
+                        <img id="story-img3" class="story-img" src="images/reference/munich-cathedral.jpg" alt="munich cathedral" onclick="openModal(this)">
+                        <p>
+                            It was supporting the roof in this cathedral for 455 years, up to its destruction in 1945. During its <span>centuries-long tenure in the roof of the church</span>, it was absorbing the vibrations of the music that would have been performed in this sacred place - music from medieval times through the renaissance, baroque, classical, romantic and modern periods. 
+                            Incredible to imagine the choirs, orchestras and chamber ensembles throughout the centuries whose sounds have been gently vibrating and therefore leaving their voices in this wood. 
+                            Also consider the vibrations coming from human speech – the countless sermons, weddings, baptisms, even funerals that would have taken place in this solemn structure - again leaving their sound vibrations imprinted in this wood. And then the terrible destruction of 1945.
+                        </p>
+                    </div>
+                    <div id="story3" class="collapsed-div">
+                        <img id="story-img4" class="story-img" src="images/reference/fuchs.jpg" alt="Blochinger with Gerald Fuchs" onclick="openModal(this)">
+                        <p>
+                            Well, thanks to <span>the courage and vision of Franz and Gerald Fuchs</span>
+                                , the wood has now been given a new beginning to continue vibrating once again, not only in the 43 violins, 3 violas and 3 cellos that have been built over the last 70 years, but now also in this guitar. 
+                            The instrument itself is breathtaking and words cannot describe the richness of sound it produces, with so little effort from the player. This incredible wood with so many stories dwelling in its grains has been given a second chance at life in this instrument and again, words fail to describe just how precious an experience it is to play this guitar. This is guitar making taken to an entirely different level.    
+                        </p>
+                    </div>
+                    <div>
+                        <i id="collapse-icon" class="fas fa-angle-double-up" onclick="expandDiv(false)"></i>
+                    </div>
+                    <div class="videoWrapper">
+                        <iframe id="video" width="280" height="158" src="https://www.youtube.com/embed/vk5-Zhu2mlE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h3>Find out more...</h3><br>
+                        <div class="story-link">
+                            <a href="http://www.guitarsalon.com/blog/?p=21079" target="_blank">Article: Ancient wood finds new life with Edmund Blochinger</a>
+                        </div> 
+                        <div class="story-link">
+                            <a href="http://issuu.com/orfeomagazine/docs/orfeo_4_en" target="_blank">Orfeo article on Hauser III, Blochinger and Ober</a>
+                        </div>
+                        <div class="story-link">
+                            <a href="http://www.guitarsalon.com/blog/?p=4089" target="_blank">Luthier Bio: Edmund Blochinger</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ---------------- FOOTER ---------------- -->
+            <div id="footer">
+                <form id="form" action="https://www.freecodecamp.com/email-submit" target="_blank" method="post">
+                    <h4>Contact for more information:</h4>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required>
+                    <input id="submit" type="submit" value="Submit">       
+                </form>
+            </div>                
+        </main>
+    </div> <!-- End flexbox-container -->
+</body>
+<script src="app.js"></script>
+</html>
