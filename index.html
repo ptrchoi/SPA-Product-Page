@@ -22,9 +22,9 @@
     <!-- ---------------- IMAGE MODAL ---------------- -->
     <div id="modal" class="modal--off">
         <img id="modal-img">
-        <i id="modal-icon-close" class="far fa-window-close" onclick="closeModal()"></i>
-        <i id="modal-icon-prev" class="fas fa-chevron-left" onclick="nextImageHandler(-1)"></i>
-        <i id="modal-icon-next" class="fas fa-chevron-right" onclick="nextImageHandler(1)"></i>
+        <i id="modal-icon-close" class="far fa-window-close"></i>
+        <i id="modal-icon-prev" class="fas fa-chevron-left"></i>
+        <i id="modal-icon-next" class="fas fa-chevron-right"></i>
     </div>
 
     <div class="flexbox-container">
@@ -32,12 +32,12 @@
             <!-- ---------------- HEADER ---------------- -->
             <header id="header">
                 <nav id="nav-bar" class="nav-container">
-                    <a id="nav-item1" class="nav-link" onclick="checkOverlay()" href="#home">Home</a>
-                    <a id="nav-item2" class="nav-link" onclick="checkOverlay()" href="#box1">Overview</a>
-                    <a id="nav-item3" class="nav-link" onclick="checkOverlay()" href="#box2">The Details</a>
-                    <a id="nav-item4" class="nav-link" onclick="checkOverlay()" href="#box3">The Story</a>
+                    <a id="nav-item1" class="nav-link" href="#home">Home</a>
+                    <a id="nav-item2" class="nav-link" href="#box1">Overview</a>
+                    <a id="nav-item3" class="nav-link" href="#box2">The Details</a>
+                    <a id="nav-item4" class="nav-link" href="#box3">The Story</a>
                     <div id="logo-wrapper">
-                        <img id="header-img" src="images/logo/ws-sound-logo-2.png" alt="ws logo" onclick="playFX()">
+                        <img id="header-img" src="images/logo/ws-sound-logo-2.png" alt="ws logo"" />
                         <audio id="harmonic-sfx" src="audio/acoustic-harmonic.wav"></audio>
                     </div>
                 </nav>
@@ -46,7 +46,7 @@
                     <h5 id="subtitle">Exceptional Guitars</h2>    
                 </div>    
                 <div id="nav-overlay" class="nav-overlay--off">
-                    <div id="nav-icon" class="nav-icon--burger" onclick="toggleOverlay()">
+                    <div id="nav-icon" class="nav-icon--burger"">
                         <div class="nav-icon--bar1"></div>
                         <div class="nav-icon--bar2"></div>
                         <div class="nav-icon--bar3"></div>
@@ -59,8 +59,8 @@
                     <video autoplay muted loop id="backgroundVideo" >
                         <source src="video/dome-clip-edited-audio.mp4" type="video/mp4">
                     </video>
-                    <div>
-                        <img id="volume-icon" src="images/icons/volume-x.svg" onclick="volumeControl()">
+                    <div id="volume-wrapper">
+                        <button id="volume-icon"">
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <h2 id="summary-title">The Edmund Blochinger "Dome" Guitar</h2>
                     <div class="summary-wrapper">
                         <div>
-                            <img id="story-img1" class="story-img" src="images/reference/church-with-beams.jpg" alt="old church roof" onclick="openModal(this)">
+                            <img id="story-img1" class="story-img" src="images/reference/church-with-beams.jpg" alt="old church roof">
                             <p>
                                 The backstory of this instrument is absolutely incredible. 
                                 Although Blochinger is known for the quality of his materials, 
@@ -84,7 +84,7 @@
                                 have been the caretakers and preservers of this precious wood for the past 70 years 
                                 until it reached the workshop of Edmund Blochinger and has been re-born in this incredible instrument. 
                                 For a fuller account of the details, click 
-                                <a target="_blank" href="http://www.guitarsalon.com/blog/?p=21079">here</a>.
+                                <a target="_blank" href="https://www.guitarsalon.com/blog/?p=21079">here</a>.
                             </p>
                         </div>
                     </div>
@@ -95,19 +95,19 @@
                 <h2>The Details</h2>
                 <div id="gallery" class="gallery-container">
                     <div id="img-slot1" class="gallery-img-wrapper">
-                        <img id="img1" class="gallery-img current-image" src="images/guitar/neckperspective.png"  alt="guitar neck" onclick="openModal(this, 'gallery')">
+                        <img id="img1" class="gallery-img current-image" src="images/guitar/neckperspective.png"  alt="guitar neck">
                     </div>
                     <div id="img-slot2" class="gallery-img-wrapper">
-                        <img id="img2" class="gallery-img" src="images/guitar/headstock.png" alt="guitar headstock" onclick="openModal(this, 'gallery')">
+                        <img id="img2" class="gallery-img" src="images/guitar/headstock.png" alt="guitar headstock">
                     </div>
                     <div id="img-slot3" class="gallery-img-wrapper">
-                        <img id="img3" class="gallery-img" src="images/guitar/lowerback.png" alt="guitar back" onclick="openModal(this, 'gallery')">
+                        <img id="img3" class="gallery-img" src="images/guitar/lowerback.png" alt="guitar back">
                     </div>
                     <div id="img-slot4" class="gallery-img-wrapper">
-                        <img id="img4" class="gallery-img" src="images/guitar/soundhole.png" alt="guitar soundhole" onclick="openModal(this, 'gallery')">                    
+                        <img id="img4" class="gallery-img" src="images/guitar/soundhole.png" alt="guitar soundhole">                    
                     </div>
                     <div id="img-slot5" class="gallery-img-wrapper">
-                        <img id="img5" class="gallery-img" src="images/guitar/labeldetail.png" alt="guitar label" onclick="openModal(this, 'gallery')">
+                        <img id="img5" class="gallery-img" src="images/guitar/labeldetail.png" alt="guitar label">
                     </div>
                 </div>            
                 <div id="specs" class="grid-container">
@@ -136,16 +136,16 @@
                 <h2>The Story</h2>
                 <div class="story-wrapper">
                     <div>
-                        <img id="story-img2" class="story-img" src="images/reference/bavarian-alps.png" alt="bavarian alps" onclick="openModal(this)">
+                        <img id="story-img2" class="story-img" src="images/reference/bavarian-alps.png" alt="bavarian alps">
                         <p>
                             Analysis of the annular rings of this spruce dates the origin of the trees from this to about the year 1190. The trees were cut in the <span>Bavarian alps around the year 1460</span> and floated down the river Isar to Munich where they were pulled out of the water and used in the construction of the roof of this church which was completed in 1492. In other words, this wood is over 800 years old from the dating of its earliest rings.
                         </p>
                     </div>
                     <div>
-                        <i id="expand-icon" class="fas fa-angle-double-down" onclick="expandDiv(true)"></i>
+                        <i id="expand-icon" class="fas fa-angle-double-down"></i>
                     </div>
                     <div id="story2" class="collapsed-div">
-                        <img id="story-img3" class="story-img" src="images/reference/munich-cathedral.jpg" alt="munich cathedral" onclick="openModal(this)">
+                        <img id="story-img3" class="story-img" src="images/reference/munich-cathedral.jpg" alt="munich cathedral">
                         <p>
                             It was supporting the roof in this cathedral for 455 years, up to its destruction in 1945. During its <span>centuries-long tenure in the roof of the church</span>, it was absorbing the vibrations of the music that would have been performed in this sacred place - music from medieval times through the renaissance, baroque, classical, romantic and modern periods. 
                             Incredible to imagine the choirs, orchestras and chamber ensembles throughout the centuries whose sounds have been gently vibrating and therefore leaving their voices in this wood. 
@@ -153,7 +153,7 @@
                         </p>
                     </div>
                     <div id="story3" class="collapsed-div">
-                        <img id="story-img4" class="story-img" src="images/reference/fuchs.jpg" alt="Blochinger with Gerald Fuchs" onclick="openModal(this)">
+                        <img id="story-img4" class="story-img" src="images/reference/fuchs.jpg" alt="Blochinger with Gerald Fuchs">
                         <p>
                             Well, thanks to <span>the courage and vision of Franz and Gerald Fuchs</span>
                                 , the wood has now been given a new beginning to continue vibrating once again, not only in the 43 violins, 3 violas and 3 cellos that have been built over the last 70 years, but now also in this guitar. 
@@ -161,7 +161,7 @@
                         </p>
                     </div>
                     <div>
-                        <i id="collapse-icon" class="fas fa-angle-double-up" onclick="expandDiv(false)"></i>
+                        <i id="collapse-icon" class="fas fa-angle-double-up"></i>
                     </div>
                     <div class="videoWrapper">
                         <iframe id="video" width="280" height="158" src="https://www.youtube.com/embed/vk5-Zhu2mlE?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -169,13 +169,13 @@
                     <div>
                         <h3>Find out more...</h3><br>
                         <div class="story-link">
-                            <a href="http://www.guitarsalon.com/blog/?p=21079" target="_blank">Article: Ancient wood finds new life with Edmund Blochinger</a>
+                            <a href="https://www.guitarsalon.com/blog/?p=21079" target="_blank">Article: Ancient wood finds new life with Edmund Blochinger</a>
                         </div> 
                         <div class="story-link">
-                            <a href="http://issuu.com/orfeomagazine/docs/orfeo_4_en" target="_blank">Orfeo article on Hauser III, Blochinger and Ober</a>
+                            <a href="https://issuu.com/orfeomagazine/docs/orfeo_4_en" target="_blank">Orfeo article on Hauser III, Blochinger and Ober</a>
                         </div>
                         <div class="story-link">
-                            <a href="http://www.guitarsalon.com/blog/?p=4089" target="_blank">Luthier Bio: Edmund Blochinger</a>
+                            <a href="https://www.guitarsalon.com/blog/?p=4089" target="_blank">Luthier Bio: Edmund Blochinger</a>
                         </div>
                     </div>
                 </div>
