@@ -11,7 +11,7 @@ const vol_off = require('./images/icons/volume-x.svg');
 
 /* ==================== OBJECT-WRAPPED CONSTS & VARS ====================== */
 //Initialize variables/flags
-var flags = {
+let flags = {
 	imgReady: true,
 	volumeOn: false,
 	overlayOn: false,
@@ -19,7 +19,7 @@ var flags = {
 };
 
 //Define values for timeouts
-var timeouts = {
+let timeouts = {
 	imgFadeDuration: 500, //img fade duration == 0.5s
 	logoSoundDuration: 5000 //logo sfx duration == 5s
 };
@@ -53,7 +53,7 @@ function toggleOverlayDisplay() {
 }
 
 function showOverlayLinks(showLinks) {
-	var links = document.querySelectorAll('.nav-link');
+	let links = document.querySelectorAll('.nav-link');
 
 	/* Note that assigning 'display' property to DOM in script overrides CSS media query assignments. */
 	if (showLinks) {
@@ -86,8 +86,6 @@ function windowResized(mq) {
 
 /* ====================== IMAGE GALLERY MODAL ==================== */
 function openModal(img, type) {
-	console.log('inside openModal() - img: ', img);
-
 	document.getElementById('modal').classList.toggle('modal--on');
 
 	//Only show modal next/prev icons for gallery imgs.
@@ -107,15 +105,15 @@ function closeModal() {
 }
 
 function getCurrentIndex(img) {
-	var imgList = document.getElementsByClassName('gallery-img');
+	let imgList = document.getElementsByClassName('gallery-img');
 
 	//If no img passed in, get 'current-image'
 	if (!img) {
-		var imgArr = document.getElementsByClassName('current-image');
+		let imgArr = document.getElementsByClassName('current-image');
 		img = imgArr[0]; //There's only 1 img in the list of 'current-image' class
 	}
 	//Get index of current image
-	for (var i = 0; i < imgList.length; i++) {
+	for (let i = 0; i < imgList.length; i++) {
 		if (imgList[i] === img) {
 			return i;
 		}
@@ -124,8 +122,8 @@ function getCurrentIndex(img) {
 
 function nextImageHandler(dir) {
 	if (flags.imgReady) {
-		var imgList = document.getElementsByClassName('gallery-img');
-		var currentIndex = getCurrentIndex();
+		let imgList = document.getElementsByClassName('gallery-img');
+		let currentIndex = getCurrentIndex();
 
 		// Check for wrap at beginning and end of list
 		if (currentIndex === imgList.length - 1 && dir === 1) {
@@ -140,9 +138,9 @@ function nextImageHandler(dir) {
 }
 
 function showImage(img) {
-	var imgList = document.getElementsByClassName('gallery-img');
-	var currentImgArr = document.getElementsByClassName('current-image'); //Only 1 image in this arr
-	var currentIndex = getCurrentIndex(img);
+	let imgList = document.getElementsByClassName('gallery-img');
+	let currentImgArr = document.getElementsByClassName('current-image'); //Only 1 image in this arr
+	let currentIndex = getCurrentIndex(img);
 
 	//Clear last image
 	currentImgArr[0].classList.toggle('current-image');
