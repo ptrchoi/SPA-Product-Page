@@ -436,14 +436,14 @@ nav > a:active {
 	display: inline-block;
 	width: 100%;
 	text-align: center;
-	font-size: calc(1.7em + 2vw);
+	font-size: calc(.3em + 2vw);
 	padding: 20px 0;
-	box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
 	transition: all .2s;
 }
 #expand-icon:hover,
 #collapse-icon:hover {
-	box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.4);
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.45);
 	cursor: pointer;
 }
 #collapse-icon {
