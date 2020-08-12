@@ -1,13 +1,17 @@
 {
-	"hosting": {
-		"site": "product-page-ptrc",
-		"public": "dist",
-		"ignore": [ "firebase.json", "**/.*", "**/node_modules/**" ],
-		"rewrites": [
-			{
-				"source": "**",
-				"destination": "/index.html"
-			}
-		]
-	}
+  "hosting": {
+		"site": "woodnstrings-ptrc",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
 }
