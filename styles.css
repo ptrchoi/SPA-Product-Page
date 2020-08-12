@@ -22,9 +22,9 @@
 }
 /* Set the page's max-width within the viewport */
 body {
-	height: 100vh;
+	/* height: 100vh; */
 	max-width: 1080px;
-	margin: 0 auto !important;
+	margin: 0 auto;
 	background-color: white;
 	font-family: 'Comfortaa', cursive, sans-serif;
 }
@@ -64,7 +64,6 @@ h5 {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-	overflow: hidden;
 }
 .flex-box {
 	height: auto;
@@ -73,7 +72,6 @@ h5 {
 main {
 	position: relative;
 	flex: 1;
-	overflow: auto;
 	z-index: 1; /* NEEDs to be > 0 to allow for scroll to engage above fixed header. */
 }
 
